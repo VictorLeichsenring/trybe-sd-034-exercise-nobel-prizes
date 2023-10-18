@@ -23,11 +23,13 @@ class App extends Component<object, NobelPrizeStates> {
       <div className="App">
         Nobel Prizes
         <Header />
-        {nobelPrizes.map((nobel) => (
+        {nobelPrizes.map((nobel, index) => (
           <NobelPrize
-            key={ nobel.dateAwarded }
+            key={ index }
             categoryFullName={ nobel.categoryFullName }
             dateAwarded={ nobel.dateAwarded }
+            laureates={ nobel.laureates || [] }
+
           />
         ))}
       </div>
